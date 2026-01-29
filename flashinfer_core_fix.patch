@@ -1,0 +1,14 @@
+--- a/venv/lib/python3.12/site-packages/flashinfer/jit/core.py
++++ b/venv/lib/python3.12/site-packages/flashinfer/jit/core.py
+@@ -52,9 +52,7 @@ def check_cuda_arch():
+     for major, minor in current_compilation_context.TARGET_CUDA_ARCHS:
+         if major >= 8:
+             eligible = True
+-        elif major == 7 and minor.isdigit():
+-            if int(minor) >= 5:
+-                eligible = True
++        elif major == 7 and minor >= 5:
++            eligible = True
+ 
+     # Raise error only if all detected architectures are lower than sm75
+     if not eligible:
