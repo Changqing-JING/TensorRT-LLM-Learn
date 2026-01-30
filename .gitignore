@@ -5,3 +5,4 @@ TensorRT-LLM
 Qwen2.5-1.5B-Instruct/
 qwen2.5_1.5b_engine/
 llama.cpp
+model.cache
