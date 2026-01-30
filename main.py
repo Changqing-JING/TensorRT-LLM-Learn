@@ -2,21 +2,15 @@ from tensorrt_llm import LLM, SamplingParams
 
 
 def main():
-
-    # Model could accept HF model name, a path to local HF model,
-    # or Model Optimizer's quantized checkpoints like nvidia/Llama-3.1-8B-Instruct-FP8 on HF.
-    # Using Qwen2.5-1.5B-Instruct with float16 for Tesla T4 compatibility
-    # dtype must be a string: "auto", "float16", "float32", or "bfloat16"
     llm = LLM(
-        model="Qwen/Qwen2.5-1.5B-Instruct",
-        dtype="float16"
+        model="Qwen/Qwen3-8B",
     )
 
     # Sample prompts.
     prompts = [
-        "Hello, my name is",
-        "The capital of France is",
-        "The future of AI is",
+        "C++ 20 introduces several new features:\n1.",
+        # or
+        "Question: What's new in C++ 20?\nAnswer:",
     ]
 
     # Create a sampling params.
